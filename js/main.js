@@ -1,18 +1,21 @@
 `use strict`;
 
-//БУРГЕР
 const burgerEl = document.querySelector(`.js-burger`);
 const navListEl = document.querySelector(`.js-nav`);
 const headerEl = document.querySelector(`.js-header`);
+const workingStepsListEl = document.querySelector(`.js-working-steps`);
+const workingItemElems = document.querySelectorAll(`.working__item`);
+const coverEl = document.createElement(`div`);
 
-//Позиционируем навигацию и регулируем максимальную высоту при изменении размеров viewport
+// БУРГЕР
+// Позиционируем навигацию и регулируем максимальную высоту при изменении размеров viewport
 function onSetNavPosResizeWindow() {
   const headerHeight = headerEl.offsetHeight;
 
-  //позиционируем навигацию под header
+  // позиционируем навигацию под header
   navListEl.style.top = headerHeight + `px`;
 
-  //ограничиваем высоту, чтобы использовать скролл при переполнении
+  // ограничиваем высоту, чтобы использовать скролл при переполнении
   navListEl.style.maxHeight = document.documentElement.clientHeight - headerHeight + `px`;
 }
 
@@ -21,11 +24,11 @@ window.addEventListener(`resize`, onSetNavPosResizeWindow);
 function onShowMenuBtnClick() {
   onSetNavPosResizeWindow();
 
-  //Добавляем активный класс бургеру и ширме
+  // Добавляем активный класс бургеру и ширме
   burgerEl.querySelector(`.burger`).classList.toggle(`burger_active`);
   coverEl.classList.toggle(`cover-on`);
 
-  //блокируем сколл документа
+  // блокируем сколл документа
   document.body.classList.toggle(`hold`);
 
   navListEl.classList.toggle(`header-nav__list_active`);
@@ -33,14 +36,13 @@ function onShowMenuBtnClick() {
 
 burgerEl.addEventListener(`click`, onShowMenuBtnClick);
 
-//добавляем ширму для перекрытия контента при открытом меню
-const coverEl = document.createElement(`div`);
+// добавляем ширму для перекрытия контента при открытом меню
 coverEl.classList.add(`cover`);
 headerEl.insertAdjacentElement(`afterend`, coverEl);
 
 coverEl.addEventListener(`click`, onShowMenuBtnClick);
 
-//СЛАЙДЕР
+// СЛАЙДЕР
 const swiper = new Swiper(`.hero__swiper`, {
   loop: true,
 
@@ -63,7 +65,24 @@ const swiper = new Swiper(`.hero__swiper`, {
 
 });
 
-//АККОРДИОН
+// ТАБЫ
+workingStepsListEl.addEventListener(`click`, function(ev) {
+  if(!ev.target.classList.contains(`working__link`)) return;
+
+  ev.preventDefault();
+
+  const targetId = ev.target.getAttribute(`href`).split(`#`)[1];
+  
+  Array.from(this.children).forEach(step => {
+    step === ev.target.parentNode ? step.classList.add(`working__step_active`) : step.classList.remove(`working__step_active`);
+  });
+
+  workingItemElems.forEach(item => {
+    item.id === targetId ? item.classList.add(`working__item_active`) : item.classList.remove(`working__item_active`);
+  });
+});
+
+// АККОРДИОН
 $(`.faq__list`).accordion({
   collapsible: true,
   header: `.faq__btn`,
