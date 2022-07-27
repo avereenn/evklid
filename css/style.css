@@ -1,5 +1,5 @@
 @font-face {
-  src: url('../fonts/Montserrat-Regular.woff2') format('woff2'), url('../fonts/Montserrat-Regular.woff') format('woff'), url('../fonts/Montserrat-Regular.ttf') format('ttf');
+  src: local('Montserrat'), url('../fonts/Montserrat-Regular.woff2') format('woff2');
   font-family: 'Montserrat';
   font-display: swap;
   font-weight: 400;
@@ -7,7 +7,7 @@
 }
 
 @font-face {
-  src: url('../fonts/Montserrat-Medium.woff2') format('woff2'), url('../fonts/Montserrat-Medium.woff') format('woff'), url('../fonts/Montserrat-Medium.ttf') format('ttf');
+  src: local('Montserrat'), url('../fonts/Montserrat-Medium.woff2') format('woff2');
   font-family: 'Montserrat';
   font-display: swap;
   font-weight: 500;
@@ -15,7 +15,7 @@
 }
 
 @font-face {
-  src: url('../fonts/Montserrat-SemiBold.woff2') format('woff2'), url('../fonts/Montserrat-SemiBold.woff') format('woff'), url('../fonts/Montserrat-SemiBold.ttf') format('ttf');
+  src: local('Montserrat'), url('../fonts/Montserrat-SemiBold.woff2') format('woff2');
   font-family: 'Montserrat';
   font-display: swap;
   font-weight: 600;
@@ -23,7 +23,7 @@
 }
 
 @font-face {
-  src: url('../fonts/Montserrat-Bold.woff2') format('woff2'), url('../fonts/Montserrat-Bold.woff') format('woff'), url('../fonts/Montserrat-Bold.ttf') format('ttf');
+  src: local('Montserrat'), url('../fonts/Montserrat-Bold.woff2') format('woff2');
   font-family: 'Montserrat';
   font-display: swap;
   font-weight: 700;
@@ -31,7 +31,7 @@
 }
 
 @font-face {
-  src: url('../fonts/Montserrat-ExtraBold.woff2') format('woff2'), url('../fonts/Montserrat-ExtraBold.woff') format('woff'), url('../fonts/Montserrat-ExtraBold.ttf') format('ttf');
+  src: local('Montserrat'), url('../fonts/Montserrat-ExtraBold.woff2') format('woff2');
   font-family: 'Montserrat';
   font-display: swap;
   font-weight: 800;
@@ -157,11 +157,11 @@ button {
 }
 
 .header__logo-link:hover,
-.header__logo-link:focus {
+.header__logo-link:focus-visible {
   transform: scale(.9);
 }
 
-.header__logo-link:focus {
+.header__logo-link:focus-visible {
   outline: var(--item-color) solid 2px;
 }
 
@@ -172,13 +172,13 @@ button {
   border: none;
 }
 
-.header-nav__burger:focus {
+.header-nav__burger:focus-visible {
   outline: none;
 }
 
-.header-nav__burger:focus .burger,
-.header-nav__burger:focus .burger::after,
-.header-nav__burger:focus .burger::before {
+.header-nav__burger:focus-visible .burger,
+.header-nav__burger:focus-visible .burger::after,
+.header-nav__burger:focus-visible .burger::before {
   background-color: var(--item-color);
 }
 
@@ -243,7 +243,7 @@ button {
 }
 
 .header-nav__link:hover,
-.header-nav__link:focus {
+.header-nav__link:focus-visible {
   box-shadow: 0 3px 0 -1px var(--item-color);
   outline: none;
 }
@@ -275,7 +275,7 @@ button {
 }
 
 .header__search-btn:hover,
-.header__search-btn:focus {
+.header__search-btn:focus-visible {
   color: var(--item-color);
   outline: none;
   box-shadow: 0 0 5px var(--item-color);
@@ -352,7 +352,7 @@ button {
 }
 
 .hero__button:hover,
-.hero__button:focus {
+.hero__button:focus-visible {
   opacity: 0.6;
   outline: none;
 }
@@ -379,7 +379,7 @@ button {
   border-radius: 50%;
 }
 
-.hero-swiper__bullet:focus {
+.hero-swiper__bullet:focus-visible {
   outline: var(--item-color) solid 2px;
 }
 
@@ -455,11 +455,11 @@ button {
 }
 
 .info-big__link:hover,
-.info-big__link:focus {
+.info-big__link:focus-visible {
   background-color: var(--item-color);
 }
 
-.info-big__link:focus {
+.info-big__link:focus-visible {
   outline: var(--font-color) solid 2px;
 }
 
@@ -526,11 +526,11 @@ button {
 }
 
 .working__link:hover,
-.working__link:focus {
+.working__link:focus-visible {
   color: var(--item-color);
 }
 
-.working__link:focus {
+.working__link:focus-visible {
   outline: var(--item-color) solid 2px;
 }
 
@@ -591,12 +591,12 @@ button {
 }
 
 .working__btn:hover,
-.working__btn:focus {
+.working__btn:focus-visible {
   color: #fff;
   background-color: var(--font-color);
 }
 
-.working__btn:focus {
+.working__btn:focus-visible {
   outline: var(--item-color) solid 2px;
 }
 
@@ -609,7 +609,7 @@ button {
 }
 
 .working__btn_more:hover,
-.working__btn_more:focus {
+.working__btn_more:focus-visible {
   color: var(--font-color);
   background-color: transparent;
 }
@@ -662,13 +662,13 @@ button {
 }
 
 .faq__btn:hover,
-.faq__btn:focus {
+.faq__btn:focus-visible {
   color: var(--item-color);
   outline: none;
 }
 
 .faq__btn:hover::after,
-.faq__btn:focus::after {
+.faq__btn:focus-visible::after {
   background-color: #d2d2d2;
 }
 
@@ -709,7 +709,7 @@ button {
   transform: scale(.9);
 }
 
-.footer__logo-link:focus {
+.footer__logo-link:focus-visible {
   outline: var(--item-color) solid 2px;
 }
 
@@ -729,11 +729,11 @@ button {
 }
 
 .footer-nav__link:hover,
-.footer-nav__link:focus {
+.footer-nav__link:focus-visible {
   opacity: 0.5;
 }
 
-.footer-nav__link:focus {
+.footer-nav__link:focus-visible {
   outline: var(--item-color) solid 2px;
 }
 
@@ -756,29 +756,20 @@ button {
   transition: transform .2s;
 }
 
-.footer-sotial__link:hover,
-.footer-sotial__link:focus {
-  transform: scale(.8);
+.footer-sotial__link:hover svg path {
+  fill: var(--item-color);
 }
 
-.footer-sotial__link:focus {
+.footer-sotial__link:active svg path {
+  fill: #e1670e;
+}
+
+.footer-sotial__link:focus-visible {
   outline: var(--item-color) solid 2px;
 }
 
 .footer-sotial__item:not(:last-child) {
   margin-right: 25px;
-}
-
-.footer-sotial__link_fb {
-  background-image: url('../img/sotial/fb.png');
-}
-
-.footer-sotial__link_vk {
-  background-image: url('../img/sotial/vk.png');
-}
-
-.footer-sotial__link_inst {
-  background-image: url('../img/sotial/instagram.png');
 }
 
 .footer__form {
@@ -791,7 +782,7 @@ button {
   padding: 10px;
 }
 
-.footer__form > *:focus {
+.footer__form > *:focus-visible {
   outline: var(--item-color) solid 2px;
 }
 
@@ -837,8 +828,8 @@ button {
   line-height: 32px;
 }
 
-.footer-form__input:focus::placeholder,
-.footer-form__area:focus::placeholder {
+.footer-form__input:focus-visible::placeholder,
+.footer-form__area:focus-visible::placeholder {
   opacity: 0;
 }
 
@@ -861,7 +852,7 @@ button {
 }
 
 .footer-form__submit:hover,
-.footer-form__submit:focus {
+.footer-form__submit:focus-visible {
   background-color: transparent;
   border: 1px solid var(--item-color);
 }
@@ -902,7 +893,7 @@ button {
   border-bottom: 2px solid #97ee3f;
 }
 
-.footer-form__checkbox:focus + .footer-form__label_agree::before {
+.footer-form__checkbox:focus-visible + .footer-form__label_agree::before {
   outline: var(--item-color) solid 2px;
 }
 
@@ -1484,7 +1475,7 @@ button {
   }
 
   .info-big__link:hover,
-  .info-big__link:focus {
+  .info-big__link:focus-visible {
     color: #fff;
   }
 
@@ -1667,7 +1658,7 @@ button {
 }
 
 .burger_active,
-.header-nav__burger:focus .burger_active {
+.header-nav__burger:focus-visible .burger_active {
   background-color: transparent;
 }
 

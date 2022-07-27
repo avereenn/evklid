@@ -7,6 +7,8 @@ const workingStepsListEl = document.querySelector(`.js-working-steps`);
 const workingItemElems = document.querySelectorAll(`.working__item`);
 const coverEl = document.createElement(`div`);
 
+new LazyLoad();
+
 // БУРГЕР
 // Позиционируем навигацию и регулируем максимальную высоту при изменении размеров viewport
 function onSetNavPosResizeWindow() {
